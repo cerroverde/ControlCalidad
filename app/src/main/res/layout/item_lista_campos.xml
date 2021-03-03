@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="1dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C181123E"
+        android:orientation="vertical"
+        android:padding="@dimen/espacio_norma_1">
+
+        <TextView
+            android:id="@+id/titulo_campo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titulo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+            android:textStyle="normal|bold" />
+
+        <EditText
+            android:id="@+id/edit_campo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_campos"
+            android:inputType="numberDecimal"/>
+
+        <TextView
+            android:id="@+id/sugerencia_campo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ayuda descriptiva"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</LinearLayout>
