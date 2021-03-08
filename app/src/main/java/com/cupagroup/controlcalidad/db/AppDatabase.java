@@ -64,5 +64,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract NavesDao getNaves();
     public abstract QualityControlDao getQualityControl();
     public abstract SessionDao getSession();
-    public abstract UserDao getUser();
+    public abstract UserDao getPreferenceUser();
 }

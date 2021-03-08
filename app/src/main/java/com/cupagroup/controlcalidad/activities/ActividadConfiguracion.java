@@ -1,4 +1,4 @@
-package com.cupagroup.controlcalidad.ui;
+package com.cupagroup.controlcalidad.activities;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;

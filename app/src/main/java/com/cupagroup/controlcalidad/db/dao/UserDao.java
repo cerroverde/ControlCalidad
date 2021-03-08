@@ -8,6 +8,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.cupagroup.controlcalidad.db.entity.User;
+import com.cupagroup.controlcalidad.modelo.Credentials;
 
 import java.util.List;
 
@@ -21,6 +22,12 @@ public interface UserDao {
 
     @Query("SELECT user_id FROM user WHERE username LIKE :nombre LIMIT 1")
     Long getIdByName(String nombre);
+
+    @Query("SELECT email, password FROM user WHERE email LIKE :email")
+    Credentials getCredentials(String email);
+
+    @Query("SELECT email FROM user WHERE email = :email")
+    String getEmail(String email);
 
     @Insert
     long insert(User user);

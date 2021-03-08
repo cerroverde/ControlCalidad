@@ -26,10 +26,11 @@ public class User implements Serializable {
     @ColumnInfo(name = "create_time")
     private String create_time;
 
-    public User(Long user_id, String username, String email){
+    public User(Long user_id, String username, String email, String password){
         this.user_id = user_id;
         this.username = username;
         this.email = email;
+        this.password = password;
     }
 
     @Ignore

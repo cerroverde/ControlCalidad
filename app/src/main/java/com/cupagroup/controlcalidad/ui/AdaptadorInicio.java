@@ -1,15 +1,23 @@
 package com.cupagroup.controlcalidad.ui;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.cupagroup.controlcalidad.R;
+import com.cupagroup.controlcalidad.db.AppDatabase;
 import com.cupagroup.controlcalidad.modelo.Comida;
+import com.cupagroup.controlcalidad.modelo.Credentials;
+
+import static com.cupagroup.controlcalidad.sync.SyncManager.syncAll;
 
 /**
  * Adaptador para mostrar las comidas más pedidas en la sección "Inicio"
@@ -17,6 +25,7 @@ import com.cupagroup.controlcalidad.modelo.Comida;
 public class AdaptadorInicio
         extends RecyclerView.Adapter<AdaptadorInicio.ViewHolder> {
 
+    AppDatabase mAppDatabase;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
@@ -58,5 +67,32 @@ public class AdaptadorInicio
         viewHolder.descripcion.setText(item.getDescripcion());
         viewHolder.titulo.setText(item.getTitulo());
 
+        viewHolder.imagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                syncAll(viewHolder.itemView.getContext(), Long.valueOf(99));
+
+                Credentials userCert = new Credentials(
+                        "malopez@cupagroup",
+                        "1234567"
+                );
+
+
+                /*
+                Credentials userCert = mAppDatabase
+                        .getUser()
+                        .getCredentials("malopez@cupagroup.com");
+                */
+                Toast.makeText(
+                        viewHolder.itemView.getContext(),
+                        userCert.getEmail(),
+                        Toast.LENGTH_LONG).show();
+            }
+
+        });
+
     }
+
+
+
 }

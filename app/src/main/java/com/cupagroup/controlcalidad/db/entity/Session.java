@@ -19,8 +19,7 @@ public class Session implements Serializable {
     @ColumnInfo(name = "status")
     private boolean status;
 
-    public Session(int user_id, Boolean status){
-        this.user_id = user_id;
+    public Session(Boolean status){
         this.status = status;
     }
 

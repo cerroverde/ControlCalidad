@@ -1,7 +1,12 @@
-package com.cupagroup.controlcalidad.ui;
+package com.cupagroup.controlcalidad.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.cupagroup.controlcalidad.db.AppDatabase;
+import com.cupagroup.controlcalidad.ui.FragmentoCategorias;
+import com.cupagroup.controlcalidad.ui.FragmentoCuenta;
+import com.cupagroup.controlcalidad.ui.FragmentoInicio;
 import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -10,13 +15,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.cupagroup.controlcalidad.R;
 
-public class ActividadPrincipal extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
+    private AppDatabase mAppDatabase;
     private DrawerLayout drawerLayout;
 
     @Override
@@ -34,6 +42,8 @@ public class ActividadPrincipal extends AppCompatActivity {
             // Seleccionar item por defecto
             seleccionarItem(navigationView.getMenu().getItem(0));
         }
+        Long correo = mAppDatabase.getPreferenceUser().getIdByName("Alejandro");
+        Log.i("GetUser", "correo: "+correo);
     }
 
     private void agregarToolbar() {
@@ -90,6 +100,8 @@ public class ActividadPrincipal extends AppCompatActivity {
         // Setear título actual
         setTitle(itemDrawer.getTitle());
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
