@@ -1,5 +1,6 @@
 package com.cupagroup.controlcalidad.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -19,6 +20,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.RelativeLayout;
 
 import com.cupagroup.controlcalidad.R;
 
@@ -26,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
     private AppDatabase mAppDatabase;
     private DrawerLayout drawerLayout;
+    private RelativeLayout footer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actividad_principal);
-
         agregarToolbar();
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -41,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
             prepararDrawer(navigationView);
             // Seleccionar item por defecto
             seleccionarItem(navigationView.getMenu().getItem(0));
+        }else {
+            Log.i("Background", "Color + "+drawerLayout.getBackground());
         }
-        Long correo = mAppDatabase.getPreferenceUser().getIdByName("Alejandro");
-        Log.i("GetUser", "correo: "+correo);
     }
 
     private void agregarToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
         if (ab != null) {
@@ -69,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
-
     }
 
     private void seleccionarItem(MenuItem itemDrawer) {

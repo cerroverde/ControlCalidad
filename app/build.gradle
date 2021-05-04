@@ -17,14 +17,21 @@ android {
         versionName "Caracas Version 2.1"
     }
     buildTypes {
+        debug {
+            buildConfigField "String", "SERVER_URL", '"http://lmcgsv020.cupagroup.com/"'
+        }
         release {
+            buildConfigField "String", "SERVER_URL", '"http://lmcgsv020.cupagroup.com/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
+    implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
+    implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'

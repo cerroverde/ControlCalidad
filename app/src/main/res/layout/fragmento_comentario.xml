@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    android:padding="@dimen/espacio_norma_1">
+
+    <TextView
+        android:id="@+id/titulo_informacion_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:text="@string/etiqueta_info_general"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:padding="@dimen/espacio_norma_1"
+            android:rowCount="2">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginBottom="@dimen/espacio_norma_1"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/espacio_norma_2"
+                android:src="@drawable/ic_assignment" />
+
+            <TextView
+                android:id="@+id/info_numero_control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/espacio_norma_1"
+                android:layout_gravity="center_vertical"
+                android:text="Nº de Control: 7"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginBottom="@dimen/espacio_norma_1"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_business" />
+
+            <TextView
+                android:id="@+id/info_cantera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/espacio_norma_1"
+                android:layout_gravity="center_vertical"
+                android:text="Cantera: Cupa 10 Arcas 3"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginBottom="@dimen/espacio_norma_1"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_ballot" />
+
+            <TextView
+                android:id="@+id/info_piezas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/espacio_norma_1"
+                android:layout_gravity="center_vertical"
+                android:text="Nº de piezas: 26"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageView
+                android:id="@+id/info_fallos_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginBottom="@dimen/espacio_norma_1"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_alert_error" />
+
+            <TextView
+                android:id="@+id/info_fallos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/espacio_norma_1"
+                android:layout_gravity="center_vertical"
+                android:text="Total en fallos: 6"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </GridLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/espacio_norma_1">
+
+            <ImageView
+                android:id="@+id/icono_password"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_comment"/>
+
+            <TextView
+                android:id="@+id/texto_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/icono_password"
+                android:text="@string/texto_comentario"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageView
+                android:id="@+id/icono_indicador_derecho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/indicador_derecho" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/info_comment_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_end_ensayo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/espacio_norma_1"
+            android:background="@color/white"
+            android:layout_margin="@dimen/espacio_norma_1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/finalizar_ensayo"
+            android:textColor="@color/primaryDarkColor" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_end_session"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/espacio_norma_1"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/finalizar_control"
+            android:textColor="@color/primaryDarkColor" />
+
+
+
+    </RelativeLayout>
+</LinearLayout>

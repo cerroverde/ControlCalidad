@@ -26,8 +26,8 @@ public interface UserDao {
     @Query("SELECT email, password FROM user WHERE email LIKE :email")
     Credentials getCredentials(String email);
 
-    @Query("SELECT email FROM user WHERE email = :email")
-    String getEmail(String email);
+    @Query("SELECT email FROM user WHERE user_id = :user_id")
+    String getEmailById(Long user_id);
 
     @Insert
     long insert(User user);

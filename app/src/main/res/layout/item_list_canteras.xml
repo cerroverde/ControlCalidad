@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/background_border">
+
+    <RelativeLayout
+        android:id="@+id/customListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/espacio_norma_1"
+        android:padding="@dimen/espacio_norma_1"
+        android:backgroundTint="@color/containerEnsayo">
+
+        <TextView
+            android:id="@+id/cantera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingStart="@dimen/espacio_norma_1"
+            android:paddingTop="@dimen/espacio_norma_1"
+            android:paddingEnd="@dimen/espacio_norma_1"
+            android:text="Cantera"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/ivSelectNave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="5dp"
+            android:src="@drawable/indicador_derecho" />
+
+        <TextView
+            android:id="@+id/nave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/cantera"
+            android:layout_toStartOf="@+id/ivSelectNave"
+            android:layout_toEndOf="@+id/cantera"
+            android:gravity="right"
+            android:layout_marginEnd="30dp"
+            android:paddingStart="@dimen/espacio_norma_1"
+            android:paddingTop="@dimen/espacio_norma_1"
+            android:paddingEnd="@dimen/espacio_norma_1"
+            android:text="Nave no seleccionada"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_below="@+id/nave"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="30dp"
+            android:paddingStart="@dimen/espacio_norma_1"
+            android:paddingTop="@dimen/espacio_norma_1"
+            android:paddingEnd="@dimen/espacio_norma_1"
+            android:layout_toStartOf="@+id/ivSelectNave"
+            android:layout_toEndOf="@+id/cantera"
+            android:text="@string/app_name"
+            android:textSize="10sp"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

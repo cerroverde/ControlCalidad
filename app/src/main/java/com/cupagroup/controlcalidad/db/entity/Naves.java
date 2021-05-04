@@ -11,26 +11,42 @@ import java.io.Serializable;
 @Entity(tableName = Constants.TABLE_NAME_NAVES)
 public class Naves implements Serializable {
     @PrimaryKey(autoGenerate = true)
-    private long naves_id;
+    private long id;
+
+    @ColumnInfo(name = "id_cantera")
+    private Long id_cantera;
 
     @ColumnInfo(name = "name")
     private String name;
 
-    public Naves(long naves_id, String name) {
-        this.naves_id = naves_id;
+    @ColumnInfo(name = "address")
+    private String address;
+
+    @ColumnInfo(name = "phone")
+    private String phone;
+
+
+    public Naves(long id, long id_cantera, String name, String address, String phone) {
+        this.id = id;
+        this.id_cantera = id_cantera;
         this.name = name;
+        this.address = address;
+        this.phone = phone;
     }
 
     public Naves(){
         //Empty
     }
 
-    public long getNaves_id() {
-        return naves_id;
+    public long getId() { return id; }
+    public void setId(long id) { this.id = id; }
+
+    public Long getId_cantera() {
+        return id_cantera;
     }
 
-    public void setNaves_id(long naves_id) {
-        this.naves_id = naves_id;
+    public void setId_cantera(Long id_cantera) {
+        this.id_cantera = id_cantera;
     }
 
     public String getName() {
@@ -39,5 +55,21 @@ public class Naves implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

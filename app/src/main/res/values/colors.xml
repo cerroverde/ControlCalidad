@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- CupaPizarras Color Themes -->
-    <color name="primaryColor">#741945</color>
+    <color name="primaryColor">#6C1D45</color>
     <color name="primaryDarkColor">#410c27</color>
     <color name="colorTabSelected">#550e39</color>
     <color name="background_cabecera_drawer">#81123e</color>
+    <color name="backgroundAlternative">#C6C6C6</color>
     <color name="accentColor">#F87652</color>
+    <color name="containerEnsayo">#E3E3E4</color>
+
+
+    <!-- Typography Colors -->
+    <color name="textTitulosColor">#212529</color>
 
     <!-- Standar Colors -->
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="gray">#cccccc</color>
     <color name="yellow">#FFFF00</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#4CAF50</color>
     <color name="negro_semitransparente">#B2000000</color>
 
     <!-- Featured Colors -->

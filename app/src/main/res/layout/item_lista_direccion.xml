@@ -10,29 +10,29 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/texto_direccion"
+            android:id="@+id/tv_cantera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dirección"
+            android:text="Cantera"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/texto_departamento"
+            android:id="@+id/tv_nave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departamento"
+            android:text="Nave"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/texto_ciudad"
+            android:id="@+id/tv_direccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ciudad"
+            android:text="Direccion"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/texto_telefono"
+            android:id="@+id/tv_telefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Teléfono"

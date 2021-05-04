@@ -5,24 +5,24 @@
     <string name="action_search">Buscar</string>
     <string name="action_carrito">Añadir al carrito</string>
 
-    <string name="item_inicio">Dashboard</string>
-    <string name="item_cuenta">Mi Cuenta</string>
-    <string name="item_categorias">Nuevo Ensayo</string>
-    <string name="item_configuracion">Configuración</string>
+    <string name="item_inicio">DASHBOARD</string>
+    <string name="item_cuenta">MI CUENTA</string>
+    <string name="item_categorias">NUEVO ENSAYO</string>
+    <string name="item_configuracion">CONFIGURACION</string>
 
-    <string name="titulo_sesiones">Selección de Calidad</string>
+    <string name="titulo_sesiones">Selección de calidad</string>
 
-    <string name="titulo_tab_material">CARACTERISTICAS MATERIAL</string>
-    <string name="titulo_tab_forma">DEFECTO FORMA</string>
-    <string name="titulo_tab_piedras">DEFECTO PIEDRA</string>
-    <string name="titulo_tab_comentario">COMENTARIOS</string>
+    <string name="titulo_tab_material">Características material</string>
+    <string name="titulo_tab_forma">Defecto forma</string>
+    <string name="titulo_tab_piedras">Defecto piedra</string>
+    <string name="titulo_tab_comentario">Comentarios</string>
 
-    <string name="titulo_tab_perfil">PERFIL</string>
-    <string name="titulo_tab_direcciones">CANTERAS y NAVES</string>
-    <string name="titulo_tab_tarjetas">NOTAS</string>
+    <string name="titulo_tab_perfil">Perfil</string>
+    <string name="titulo_tab_direcciones">Canteras y naves</string>
+    <string name="titulo_tab_tarjetas">Notas</string>
 
     <string name="texto_no_tarjetas">Control según UNE 66020-1. Tabla 1 y 2A. Tamaño lote 35.000 a 150.000. \n
-        Nivel de inspección S3 AQL 4%.\n \n En cuadro UNE-EN 12326 poner OK si el ensayo sobre 32
+        Nivel de inspección S3 AQL 4%.\n\n En cuadro UNE-EN 12326 poner OK si el ensayo sobre 32
         piezas es conforme. Indicar el valor en caso de no conforme.\n *Esp. Individual:
         Marcado NF +- 25%. Esp. Nominal Marcado CE +-35% Esp. Nominal.\n *Rectangularidad:
         La desviación de la rectangularidad no debe ser mayor del 1% de la longitud.\n Marcado
@@ -36,8 +36,10 @@
     <string name="texto_cambiar_contrasena">Cambia tu contraseña</string>
     <string name="etiqueta_contrasena">Contraseña</string>
     <string name="etiqueta_info_usuario">Información del usuario</string>
+    <string name="etiqueta_info_general">Información general</string>
+    <string name="texto_comentario">Reseña tu comentario</string>
 
-    <string name="hint_campos">0.0</string>
+    <string name="hint_campos">0</string>
     <string name="title_activity_settings">Configuración</string>
 
     <!-- Preference Titles -->
@@ -71,5 +73,19 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="finalizar_control">Finalizar control</string>
+    <string name="finalizar_ensayo">Añadir ensayo</string>
 
+    <!-- Custom Dialog -->
+    <string name="label_comment">Observaciones</string>
+    <string name="label_type_your_comment">Ser específico, denota inteligencia</string>
+    <string name="label_submit">Guardar</string>
+    <string name="label_cancel">Cancelar</string>
+
+    <!-- Custom Radio Buttom User Preference -->
+    <string name="label_user_pref">Usuarios registrados</string>
+
+    <!-- Custom Radio Buttom User Preference -->
+    <string name="label_nave_pref">Naves asociadas</string>
+    <string name="loading">Guardando...</string>
 </resources>

@@ -13,7 +13,7 @@ import java.util.List;
 @Dao
 public interface CalidadDao {
 
-    @Query("SELECT name FROM calidad ORDER BY LOWER(calidad_id)")
+    @Query("SELECT calidad_name FROM calidad ORDER BY LOWER(calidad_id)")
     List<String> getAll();
 
     @Insert

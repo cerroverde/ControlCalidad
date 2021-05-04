@@ -74,7 +74,7 @@ public class FragmentoCuenta extends Fragment {
      * Un {@link FragmentStatePagerAdapter} que gestiona las secciones, fragmentos y
      * títulos de las pestañas
      */
-    public class AdaptadorSecciones extends FragmentStatePagerAdapter {
+    public static class AdaptadorSecciones extends FragmentStatePagerAdapter {
         private final List<Fragment> fragmentos = new ArrayList<>();
         private final List<String> titulosFragmentos = new ArrayList<>();
 

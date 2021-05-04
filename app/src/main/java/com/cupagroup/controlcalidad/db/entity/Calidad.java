@@ -15,11 +15,11 @@ public class Calidad implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private long calidad_id;
 
-    @ColumnInfo(name = "name")
-    private String name;
+    @ColumnInfo(name = "calidad_name")
+    private String calidad_name;
 
-    public Calidad(String name) {
-        this.name = name;
+    public Calidad(Long calidad_id, String calidad_name) {
+        this.calidad_name = calidad_name;
     }
 
     @Ignore
@@ -30,16 +30,14 @@ public class Calidad implements Serializable {
     public long getCalidad_id() {
         return calidad_id;
     }
-
     public void setCalidad_id(long calidad_id) {
         this.calidad_id = calidad_id;
     }
 
-    public String getName() {
-        return name;
+    public String getCalidad_name() {
+        return calidad_name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String calidad_name) {
+        this.calidad_name = calidad_name;
     }
 }

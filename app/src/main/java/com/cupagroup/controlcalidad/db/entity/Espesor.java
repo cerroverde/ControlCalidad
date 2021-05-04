@@ -17,7 +17,8 @@ public class Espesor implements Serializable {
     @ColumnInfo(name = "grosor")
     private String grosor;
 
-    public Espesor(String grosor) {
+    public Espesor(Long espesor_id, String grosor) {
+        this.espesor_id = espesor_id;
         this.grosor = grosor;
     }
 

@@ -4,32 +4,34 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/miniatura_comida"
+    <RelativeLayout
+        android:id="@+id/dashboard_items"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/altura_miniatura_comida"
-        android:scaleType="centerCrop" />
-
-    <TextView
-        android:id="@+id/precio_comida"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|bottom"
-        android:layout_marginBottom="32dp"
-        android:paddingLeft="@dimen/espacio_norma_1"
-        android:text="Large Text"
-        android:textColor="@android:color/white"
-        android:textSize="48sp"
-        android:textStyle="italic" />
+        android:gravity="center"
+        android:minHeight="368dp">
 
-    <TextView
-        android:id="@+id/nombre_comida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left|bottom"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:text="Medium Text"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textColor="@android:color/white" />
+        <TextView
+            android:id="@+id/precio_comida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/espacio_norma_1"
+            android:paddingTop="@dimen/espacio_norma_1"
+            android:paddingEnd="@dimen/espacio_norma_1"
+            android:paddingBottom="0dp"
+            style="@style/dashboard_caja_titulos"
+            android:text="Large Text" />
+        <TextView
+            android:id="@+id/nombre_comida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/precio_comida"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="Medium Text"
+            style="@style/dashboard_caja_hint"/>
+
+    </RelativeLayout>
 </FrameLayout>

@@ -15,11 +15,14 @@ public class Formas implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private long forma_id;
 
-    @ColumnInfo(name = "name")
-    private String name;
+    @ColumnInfo(name = "forma_name")
+    private String forma_name;
 
-    public Formas(String name) {
-        this.name = name;
+    //Constructor
+    public Formas(Long forma_id, String forma_name)
+    {
+        this.forma_id = forma_id;
+        this.forma_name = forma_name;
     }
 
     @Ignore
@@ -30,17 +33,15 @@ public class Formas implements Serializable {
     public Long getForma_id() {
         return forma_id;
     }
-
     public void setForma_id(Long forma_id) {
         this.forma_id = forma_id;
     }
 
-    public String getName() {
-        return name;
+    public String getForma_name() {
+        return forma_name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setForma_name(String name) {
+        this.forma_name = forma_name;
     }
 }
 

@@ -4,15 +4,20 @@ import android.graphics.Color;
 import android.os.Bundle;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
+
+import androidx.annotation.DrawableRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.cupagroup.controlcalidad.R;
 
@@ -22,12 +27,13 @@ import java.util.List;
 
 /**
  * Fragmento que contiene otros fragmentos anidados para representar las categorías
- * de comidas
+ * de la selección de calidad
  */
 public class FragmentoCategorias extends Fragment {
     private AppBarLayout appBarLayout;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private RelativeLayout footer;
 
     public FragmentoCategorias() {
     }
@@ -43,7 +49,6 @@ public class FragmentoCategorias extends Fragment {
             // Setear adaptador al viewpager.
             viewPager = (ViewPager) view.findViewById(R.id.pager);
             poblarViewPager(viewPager);
-
             tabLayout.setupWithViewPager(viewPager);
         }
 
@@ -55,8 +60,12 @@ public class FragmentoCategorias extends Fragment {
         appBarLayout = (AppBarLayout) padre.findViewById(R.id.appbar);
 
         tabLayout = new TabLayout(getActivity());
-        tabLayout.setTabTextColors(Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF"));
+        tabLayout.setTabTextColors
+                (Color.parseColor("#212529"),
+                        Color.parseColor("#212529"));
+        tabLayout.setBackgroundColor(Color.parseColor("#C6C6C6"));
         appBarLayout.addView(tabLayout);
+
     }
 
     private void poblarViewPager(ViewPager viewPager) {
@@ -64,9 +73,12 @@ public class FragmentoCategorias extends Fragment {
         adapter.addFragment(FragmentoCategoria.nuevaInstancia(0), getString(R.string.titulo_tab_material));
         adapter.addFragment(FragmentoCategoria.nuevaInstancia(1), getString(R.string.titulo_tab_forma));
         adapter.addFragment(FragmentoCategoria.nuevaInstancia(2), getString(R.string.titulo_tab_piedras));
-        adapter.addFragment(FragmentoCategoria.nuevaInstancia(3), getString(R.string.titulo_tab_comentario));
+        adapter.addFragment(new FragmentoMiscelaneo(), getString(R.string.titulo_tab_comentario));
+
+
         viewPager.setAdapter(adapter);
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,11 +101,12 @@ public class FragmentoCategorias extends Fragment {
      * Un {@link FragmentStatePagerAdapter} que gestiona las secciones, fragmentos y
      * títulos de las pestañas
      */
-    public class AdaptadorSecciones extends FragmentStatePagerAdapter {
+    public static class AdaptadorSecciones extends FragmentStatePagerAdapter {
         private final List<Fragment> fragmentos = new ArrayList<>();
         private final List<String> titulosFragmentos = new ArrayList<>();
 
         public AdaptadorSecciones(FragmentManager fm){ super(fm);}
+
 
         @Override
         public Fragment getItem(int position) {

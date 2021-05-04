@@ -14,5 +14,6 @@ public class Constants {
     public static final String TABLE_NAME_FORMA = "forma";
     public static final String TABLE_NAME_ESPESOR = "espesor";
     public static final String TABLE_NAME_CALIDAD = "calidad";
+    public static final String TABLE_NAME_CANTERAS = "canteras";
 
 }

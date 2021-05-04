@@ -12,8 +12,14 @@ import java.util.List;
 
 @Dao
 public interface FormasDao {
-    @Query("SELECT name FROM forma ORDER BY LOWER(forma_id)")
+    @Query("SELECT forma_name FROM forma ORDER BY LOWER(forma_id)")
     List<String> getAll();
+
+    @Query("SELECT forma_name FROM forma ORDER BY LOWER(forma_id)")
+    List<String> getFormaEntries();
+
+    @Query("SELECT forma_id FROM forma ORDER BY  LOWER(forma_id)")
+    List<Long> getFormaEntryValues();
 
     @Insert
     long insert(Formas formas);

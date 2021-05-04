@@ -6,14 +6,20 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.cupagroup.controlcalidad.activities.CanterasListClass;
+import com.cupagroup.controlcalidad.activities.NavesListClass;
+import com.cupagroup.controlcalidad.adapters.AdaptadorDirecciones;
 import com.cupagroup.controlcalidad.db.entity.Naves;
 
 import java.util.List;
 
 @Dao
 public interface NavesDao {
-    @Query("SELECT name FROM naves ORDER BY LOWER(naves_id)")
-    List<String> getAll();
+    @Query("SELECT id, name,address FROM naves WHERE id_cantera = :id_cantera ORDER BY LOWER(id)")
+    List<NavesListClass> getAll(Long id_cantera);
+
+    @Query("SELECT address FROM naves WHERE id = :id_naves")
+    String getAddressFromId(Long id_naves);
 
     @Insert
     long insert(Naves naves);

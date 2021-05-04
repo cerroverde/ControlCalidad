@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 @Entity(tableName = Constants.TABLE_NAME_SESSIONS)
 public class Session implements Serializable {
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
     private long session_id;
 
     @ColumnInfo(name = "user_id")

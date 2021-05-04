@@ -10,12 +10,15 @@ import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.cupagroup.controlcalidad.db.dao.CalidadDao;
+import com.cupagroup.controlcalidad.db.dao.CanterasDao;
 import com.cupagroup.controlcalidad.db.dao.EspesorDao;
+import com.cupagroup.controlcalidad.db.dao.FormasDao;
 import com.cupagroup.controlcalidad.db.dao.NavesDao;
 import com.cupagroup.controlcalidad.db.dao.QualityControlDao;
 import com.cupagroup.controlcalidad.db.dao.SessionDao;
 import com.cupagroup.controlcalidad.db.dao.UserDao;
 import com.cupagroup.controlcalidad.db.entity.Calidad;
+import com.cupagroup.controlcalidad.db.entity.Canteras;
 import com.cupagroup.controlcalidad.db.entity.Espesor;
 import com.cupagroup.controlcalidad.db.entity.Formas;
 import com.cupagroup.controlcalidad.db.entity.Naves;
@@ -31,13 +34,14 @@ import com.cupagroup.controlcalidad.utils.Constants;
         QualityControl.class,
         Session.class,
         User.class,
-        Formas.class
-}, version = 1, exportSchema = false)
+        Formas.class,
+        Canteras.class
+}, version = 7, exportSchema = false)
 
 public abstract class AppDatabase extends RoomDatabase {
 
     public static AppDatabase appDB;
-    static final Migration MIGRATION_1_2 = new Migration(1,2) {
+    static final Migration MIGRATION_6_7 = new Migration(6,7) {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
 
@@ -55,7 +59,7 @@ public abstract class AppDatabase extends RoomDatabase {
         return Room.databaseBuilder(context, AppDatabase.class, Constants.DB_NAME)
                 .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
-                .addMigrations(MIGRATION_1_2)
+                .addMigrations(MIGRATION_6_7)
                 .build();
     }
 
@@ -65,4 +69,6 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract QualityControlDao getQualityControl();
     public abstract SessionDao getSession();
     public abstract UserDao getPreferenceUser();
+    public abstract FormasDao getFormas();
+    public abstract CanterasDao getCanteras();
 }
